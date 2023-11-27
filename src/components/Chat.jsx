@@ -12,7 +12,7 @@ import React from "react";
 import Cam from "../assets/cam.png";
 import Add from "../assets/add.png";
 import More from "../assets/more.png";
-// import Messages from "./Messages";
+import { Messages } from "./Messages";
 // import Input from "./Input";
 // import { ChatContext } from "../context/ChatContext";
 
@@ -28,6 +28,7 @@ export const Chat = () => {
           <img src={Add} alt="" />
           <img src={More} alt="" />
         </div>
+        <Messages />
       </div>
     </div>
   );
