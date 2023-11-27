@@ -5,8 +5,8 @@ export const Register = () => {
   return (
    <div className='formContainer'>
     <div className='formWrapper'>
-    <img src={logo} style={{width:80 , height:60}} alt="Image Loading..." />
-        <span className='logo'>Chit-Chat</span>
+    <img src={logo} style={{width:130 , height:100}} alt="Image Loading..." />
+        {/* <span className='logo'>Chit-Chat</span> */}
         <span className='title'>Register</span>
     <form>
         <input type='text' placeholder='Your Full Name'></input>
