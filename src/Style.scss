@@ -1,20 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .formContainer {
     background-color: #74BBE7;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 
     .formWrapper {
         background-color: white;
-        padding: 20px 50px;
+        padding: 20px 60px;
+        width: 50vh;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         align-items: center;
-        justify-content: center;
+        
 
 
         // .logo{
@@ -37,7 +44,8 @@
             input {
                 padding: 15px;
                 border: none;
-                border-bottom: 1px solid #a7bcff;
+                margin: 0;
+                border-bottom: 2px solid #a7bcff;
                 &::placeholder{
                     color: rgb(175,175,175);
                 }
@@ -52,6 +60,20 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
+
+            label{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color:#2790d1;
+                font-size: 12px;
+
+            }
+        }
+        p{
+            color:#2790d1 ;
+            font-size: 12px;
+            margin-top: 10px;
         }
 
     }
