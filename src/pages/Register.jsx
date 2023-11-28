@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import logo from "../assets/logo.png"
 import Add from "../assets/addAvatar.png"
-import { createUserWithEmailAndPassword , updateProfile} from "firebase/auth";
-import { auth ,storage} from "../firebase";
-import {  ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, storage, db } from "../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 
 export const Register = () => {
 
@@ -21,7 +22,7 @@ export const Register = () => {
             const res = await createUserWithEmailAndPassword(auth, email, password);
 
 
-            
+
             const storageRef = ref(storage, displayName);
 
             const uploadTask = uploadBytesResumable(storageRef, file);
@@ -31,7 +32,7 @@ export const Register = () => {
             // 2. Error observer, called on failure
             // 3. Completion observer, called on successful completion
             uploadTask.on('state_changed',
-                
+
                 (error) => {
                     // Handle unsuccessful uploads
                     setErr(true);
@@ -40,17 +41,24 @@ export const Register = () => {
                 () => {
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                    getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
+                    getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
                         await updateProfile(
-                            res.user,{
+                            res.user, {
 
-                                displayName,
-                                photoURL:downloadURL,
-                            }
-                        ); 
+                            displayName,
+                            photoURL: downloadURL,
+                        }
+                        );
+                        await setDoc(doc(db, "users", res.user.uid), {
+                            uid: res.user.uid,
+                            displayName,
+                            email,
+                            photoURL: downloadURL,
+                        });
                     });
                 }
             );
+
 
 
         }
