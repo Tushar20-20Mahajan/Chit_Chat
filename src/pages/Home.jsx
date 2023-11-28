@@ -1,17 +1,14 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar';
-import Chat from '../components/Chat';
-const Home = () => {
+import { Sidebar } from '../components/Sidebar'
+import { Chat } from '../components/Chat'
+
+export const Home = () => {
   return (
-    <div style={{fontFamily:"Lato"}}>
     <div className='home'>
-      <div className="container">
-        <Sidebar/>
-        <Chat/>
-      </div>
-    </div>
+        <div className="container">
+            <Sidebar />
+            <Chat />
+        </div>
     </div>
   )
 }
-
-export default Home

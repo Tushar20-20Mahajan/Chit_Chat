@@ -1,28 +1,17 @@
-import React, { useContext, useRef,useEffect } from 'react'
-import { AuthContext } from '../context/AuthContext';
-import { ChatContext } from '../context/ChatContext';
+import React from 'react'
+import Img from "../assets/myImage.jpg"
 
-const Message = ({message}) => {
-
-const {currentUser}=useContext(AuthContext)
-const {data}=useContext(ChatContext )
-const ref=useRef()
-useEffect(() => {
-  ref.current?.scrollIntoView({ behavior: "smooth" });
-}, [message]);
+export const Message = () => {
   return (
-    <div ref={ref} className={`message ${message.senderId===currentUser.uid && "owner"}`}>
-      <div className="messageInfo">
-        <img src={message.senderId===currentUser.uid?currentUser.photoURL:data.user.photoURL} alt="" />
+    <div className='message owner'>
+      <div className='messageInfo'>
+        <img src={Img} alt="" />
         <span>just now</span>
       </div>
-      <div className="messageContent">
-        <p>{message.text}</p>
-        {message.img &&  <img src={message.img} alt="" />} 
+      <div className='messageContent'>
+        <p>hello</p>
+        <img src={Img} alt="" />
       </div>
     </div>
   )
 }
-
-export default Message
-Message
