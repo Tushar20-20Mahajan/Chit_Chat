@@ -7,14 +7,18 @@ import { getFirestore } from "firebase/firestore"
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// Import the functions you need from the SDKs you need
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAwLNG63DgZ1fVQ74hWKd9vJaOyMQg1-wE",
-  authDomain: "chit-chat-32cdc.firebaseapp.com",
-  projectId: "chit-chat-32cdc",
-  storageBucket: "chit-chat-32cdc.appspot.com",
-  messagingSenderId: "759468051631",
-  appId: "1:759468051631:web:62585769f63cbe2fc9185a"
+  apiKey: "AIzaSyCA4vA5k5OAq1kEymvaH3xJC_N8cO9FMQw",
+  authDomain: "chit-chat-hub-ac057.firebaseapp.com",
+  projectId: "chit-chat-hub-ac057",
+  storageBucket: "chit-chat-hub-ac057.appspot.com",
+  messagingSenderId: "737758787287",
+  appId: "1:737758787287:web:dd00a57283685df3a3e292"
 };
+
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
