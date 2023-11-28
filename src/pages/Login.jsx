@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 
-export const Login = () => {
+const Login = () => {
    
         const [err, setErr] = useState(false);
         const navigate = useNavigate();
@@ -41,3 +41,4 @@ export const Login = () => {
         </div>
     )
 }
+export default Login;
